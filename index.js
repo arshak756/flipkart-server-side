@@ -17,9 +17,13 @@ const app = express();
 
 // ✅ Fixed CORS setup
 app.use(cors({
-  origin: "http://localhost:5173", // your React frontend running locally
+  origin: [
+    "http://localhost:5173",
+    "https://flipkart-client-kappa.vercel.app"
+  ],
   credentials: true
 }));
+
 
 app.use(express.json());
 
