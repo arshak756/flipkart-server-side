@@ -20,8 +20,8 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://flipkart-client-kappa.vercel.app",
-    "https://flipkart-client-dy78.vercel.app" // ✅ add this!
-    "https://flipkart-client-mvo7.vercel.app/"
+    "https://flipkart-client-dy78.vercel.app" 
+    "https://flipkart-client-mvo7.vercel.app"
   ],
   credentials: true
 }));
