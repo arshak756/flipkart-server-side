@@ -19,10 +19,12 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://flipkart-client-kappa.vercel.app"
+    "https://flipkart-client-kappa.vercel.app",
+    "https://flipkart-client-dy78.vercel.app" // ✅ add this!
   ],
   credentials: true
 }));
+
 
 
 app.use(express.json());
