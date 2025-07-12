@@ -1,7 +1,7 @@
-// Load env first
+
 const dotenv = require("dotenv");
 dotenv.config();
-console.log("Stripe Key Loaded:", process.env.STRIPE_SECRET_KEY ? "✅ Yes" : "❌ No");
+console.log("Stripe Key Loaded:", process.env.STRIPE_SECRET_KEY ? " Yes" : " No");
 
 const express = require("express");
 const cors = require("cors");
@@ -15,35 +15,35 @@ const paymentRoutes = require("./routes/paymentRoutes");
 
 const app = express();
 
-// ✅ Fixed CORS setup
+
 app.use(cors({
   origin: "https://flipkart-client-mvo7.vercel.app",
-  credentials: true // Optional: only if you're using cookies/auth
+  credentials: true 
 }));
 
 
 
 app.use(express.json());
 
-// Route middleware
+
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/payments", paymentRoutes);
 
-// MongoDB connection
+
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.log("❌ Mongo Error:", err));
+  .then(() => console.log(" MongoDB connected"))
+  .catch((err) => console.log(" Mongo Error:", err));
 
-// Default test route
+
 app.get("/", (req, res) => {
   res.send("NeoMart API is working!");
 });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(` Server running on port ${PORT}`);
 });
