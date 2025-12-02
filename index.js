@@ -17,7 +17,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: "https://flipkart-client-mvo7.vercel.app",
+  origin: "https://flipkart-client-mvo7-knx2rgv8r-mohammed-arshaks-projects.vercel.app",
   credentials: true 
 }));
 
